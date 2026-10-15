@@ -162,8 +162,11 @@ git push -u origin main
 
    第一次 push 會跳出 GitHub 登入視窗，登入即可。
 
-3. 到 repo 的 **Settings → Pages → Build and deployment → Source** 選 **GitHub Actions**。
-4. 等 **Actions** 分頁的工作跑完（約一分鐘），打開 https://hoogashaga.github.io/。
+3. `<帳號>.github.io` 這種 repo GitHub 會**自動開啟 Pages**，第一次 push 後約一分鐘網站就上線，
+   不用另外設定。若 Actions 分頁顯示部署失敗，再到 **Settings → Pages → Source** 確認選的是 **GitHub Actions**。
+4. 打開 https://hoogashaga.github.io/。
+
+要暫時下架：**Settings → Pages** 右上角「…」→ **Unpublish site**；或把 repo 改成 private（免費方案的 private repo 不會發佈 Pages）。
 
 日常更新就三行：
 
