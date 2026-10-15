@@ -53,7 +53,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="{{ site.display_name or site.name }}">
 <meta property="og:description" content="{{ site.description }}">
-<link rel="stylesheet" href="static/css/style.css">
+<link rel="stylesheet" href="static/css/style.css?v={{ css_version }}">
 {% if site.goatcounter %}
 {# Private visitor stats. Nothing is shown on the page; only the dashboard owner sees the numbers. #}
 <script data-goatcounter="https://{{ site.goatcounter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

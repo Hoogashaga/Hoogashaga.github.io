@@ -239,6 +239,12 @@ def build() -> None:
         shutil.rmtree(DIST, ignore_errors=True)
     DIST.mkdir(parents=True, exist_ok=True)
 
+    # Short hash of the stylesheet, appended as ?v=... so browsers never keep a
+    # stale copy after a deploy.
+    import hashlib
+    css_file = STATIC / "css" / "style.css"
+    data["css_version"] = hashlib.md5(css_file.read_bytes()).hexdigest()[:8] if css_file.exists() else "1"
+
     html = env.get_template("index.html").render(**data)
     (DIST / "index.html").write_text(html, encoding="utf-8")
 
