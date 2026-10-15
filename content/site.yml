@@ -75,6 +75,8 @@ skills:
 # 整段刪掉或寫 news: [] 就不會顯示。
 # ---------------------------------------------------------------------------
 news:
+  - date: "2026-10"
+    text: "Completed the NVIDIA course *Data Parallelism: How to Train Deep Learning Models on Multiple GPUs*."
   - date: "2026-05"
     text: Graduated from the University of Illinois Urbana-Champaign with a Master of Computer Science.
   - date: "2026-03"
@@ -84,6 +86,10 @@ news:
 # Certificates：新的放最上面。url 留空就只顯示文字。
 # ---------------------------------------------------------------------------
 certificates:
+  - title: "Data Parallelism: How to Train Deep Learning Models on Multiple GPUs"
+    issuer: NVIDIA
+    date: "Oct 2026"
+    url: https://learn.nvidia.com/certificates?id=4FJZMDC5RbS26Ms2_CEJSg
   - title: Building Agentic AI Applications with Large Language Models
     issuer: NVIDIA
     date: "Mar 2026"
