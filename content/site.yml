@@ -1,0 +1,120 @@
+# ---------------------------------------------------------------------------
+# 基本資料、聯絡方式、About、Skills、News、Certificates、獎項。
+# 每個欄位都可以留空 ""，留空就不會出現在網頁上。
+# ---------------------------------------------------------------------------
+
+name: Sheng-Hao Chen                          # 正式姓名，論文作者欄用它自動粗體
+display_name: Sheng-Hao (Orion) Chen          # 網頁上顯示的名字，留空就用 name
+headline: ML research & engineering · VR/AR, optics, embedded systems and LLM agents        # 姓名下方一行
+affiliation: ""                                    # 單位／學校，留空就不顯示
+location: ""
+
+email: schen696@gatech.edu
+
+# 大頭照：放到 static/img/，寫成 img/<檔名>。留空就不顯示。
+photo: ""
+
+# 履歷 PDF：檔案放到 static/files/resume.pdf，再把 cv 改成 files/resume.pdf，
+# 左欄的 Resume 就會變成下載連結。cv 留空時，cv_placeholder: true 會先顯示
+# 灰色的「Resume (coming soon)」佔位；兩個都空就完全不顯示。
+cv: ""
+cv_placeholder: true
+
+# 左側聯絡連結。label 裡有 Email / GitHub / LinkedIn / Scholar / Twitter / ORCID
+# 會自動配上對應圖示，其他文字則用通用的連結圖示。
+links:
+  - label: Email
+    url: mailto:schen696@gatech.edu
+  - label: GitHub
+    url: https://github.com/Hoogashaga
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/sheng-hao-chen-hello/
+  - label: Portfolio
+    url: static/files/portfolio.pdf      # 檔案在 static/files/，要更新就換掉同名檔
+
+# ---------------------------------------------------------------------------
+# About me：Markdown，幾段短文即可。
+# ---------------------------------------------------------------------------
+about: |
+  I'm Orion, an engineer who can't resist taking things apart to see how they
+  work, from laser optics to language models. Over the years that curiosity has
+  taken me through VR tracking optics for the HTC Vive, AR display systems,
+  machine-vision tooling at Tesla and Intel, a self-driving robot car built from
+  the circuit board up, and most recently LLM agents that check and repair their
+  own memory. The thread running through all of it: understand the system,
+  then make it work reliably.
+
+  Today my focus is making LLM agents trustworthy: detecting when a model is
+  uncertain, repairing failures in its memory, and measuring the result with
+  evidence-based evaluation. My latest work is a self-repair framework for
+  multi-graph agent memory, evaluated on the LoCoMo benchmark (under review at
+  *IEEE OJCS*). Before that I fine-tuned and ensembled T5 models for
+  text-to-program question answering over clinical records, reproducing the
+  published results end to end.
+
+  My background in physics and photonics taught me to treat ML as an empirical
+  science: careful experiments, engineering rigor, reliable operation. I pick
+  up new domains quickly, and I'm happiest on teams where research and
+  engineering sit side by side, building AI that is safer and more trustworthy.
+
+# 技術技能。整段刪掉或寫 skills: [] 就不顯示。
+skills:
+  - group: Languages
+    items: [Python, C/C++, Java, JavaScript, SQL, MATLAB]
+  - group: AI / ML / LLM
+    items: [PyTorch, Transformers, Hugging Face, LangChain, RAG, OpenCV]
+  - group: Backend / Web
+    items: [Node.js, Express, Flask, Spring Boot, React, REST APIs]
+  - group: Databases
+    items: [PostgreSQL, MongoDB, SQLite]
+  - group: Cloud / DevOps
+    items: [AWS, GCP, Docker, Kubernetes, Jenkins, CI/CD, Git]
+
+# ---------------------------------------------------------------------------
+# News：新的放最上面。date 自由格式，text 可用 Markdown 連結。
+# 整段刪掉或寫 news: [] 就不會顯示。
+# ---------------------------------------------------------------------------
+news:
+  - date: "2026-05"
+    text: Graduated from the University of Illinois Urbana-Champaign with a Master of Computer Science.
+  - date: "2026-03"
+    text: Completed the NVIDIA course *Building Agentic AI Applications with Large Language Models*.
+
+# ---------------------------------------------------------------------------
+# Certificates：新的放最上面。url 留空就只顯示文字。
+# ---------------------------------------------------------------------------
+certificates:
+  - title: Building Agentic AI Applications with Large Language Models
+    issuer: NVIDIA
+    date: "Mar 2026"
+    url: https://learn.nvidia.com/certificates?id=GlmjWWA0Q9-i5Hx7fPp0Jw
+  - title: Building RAG Agents with LLMs
+    issuer: NVIDIA
+    date: "Jan 2026"
+    url: https://learn.nvidia.com/certificates?id=th6gFwo5Toaq3ylLVVPlSA
+  - title: Rapid Application Development with Large Language Models (LLMs)
+    issuer: NVIDIA
+    date: "Oct 2025"
+    url: https://learn.nvidia.com/certificates?id=n6hPbV5LRHyRFVA1woGkKQ
+  - title: Building LLM Applications With Prompt Engineering
+    issuer: NVIDIA
+    date: "Sep 2025"
+    url: https://learn.nvidia.com/certificates?id=oiH5CRfGQnqJJBVftrULTw
+
+# ---------------------------------------------------------------------------
+# Honors & Awards：一行一個。不要就寫 awards: []
+# ---------------------------------------------------------------------------
+awards: []
+
+# ---------------------------------------------------------------------------
+# 隱藏式訪客統計（GoatCounter，免費、無 cookie，只有你登入後台看得到）。
+# 到 https://www.goatcounter.com 註冊，選一個代碼（例如 orionchen），
+# 填進下面；留空就不掛任何統計。
+# ---------------------------------------------------------------------------
+goatcounter: ""
+
+# ---------------------------------------------------------------------------
+# SEO
+# ---------------------------------------------------------------------------
+url: https://hoogashaga.github.io
+description: Sheng-Hao Chen — ML research & engineering across VR/AR, optics, embedded systems and LLM agents. Projects, publications and CV.

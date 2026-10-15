@@ -1,0 +1,128 @@
+# ---------------------------------------------------------------------------
+# 學歷 + 經歷。新的放最上面（不會自動排序，寫的順序就是顯示順序）。
+# 日期是自由文字："2023"、"Mar 2023"、"2023.03" 都可以，自己保持一致就好。
+# end 寫 Present 就會顯示 Present。
+# ---------------------------------------------------------------------------
+
+education:
+  - degree: Master of Computer Science
+    org: University of Illinois Urbana-Champaign
+    url: https://illinois.edu/
+    start: Sep 2024
+    end: May 2026
+    note: "GPA 4.0/4.0"
+
+  - degree: M.S. in Electrical Engineering
+    org: University of Washington
+    url: https://www.washington.edu/
+    start: Sep 2020
+    end: Jun 2022
+    note: "Seattle, WA. GPA 3.67/4.0"
+
+  - degree: M.S. in Photonics and Optoelectronics (EECS)
+    org: National Taiwan University
+    url: https://www.ntu.edu.tw/
+    start: Sep 2011
+    end: Jun 2013
+    note: "Taipei, Taiwan"
+
+  - degree: B.S. in Physics
+    org: National Central University
+    url: https://www.ncu.edu.tw/
+    start: Sep 2004
+    end: Jun 2009
+    note: "Taoyuan, Taiwan"
+
+work:
+  - role: Graduate Researcher — LLM Agents & Memory Systems
+    org: Georgia Institute of Technology
+    url: https://www.gatech.edu/
+    start: May 2026
+    end: Aug 2026
+    # location 欄位顯示在單位後面，這裡拿來標 PI
+    location: "PI: Prof. Vijay K. Madisetti"
+    bullets:
+      - Designed and implemented a self-repair framework for multi-graph LLM agent memory, integrating probe-based verification with failure-aware memory repair.
+      - Developed typed repair mechanisms for restoring missing facts, repairing causal/entity relationships, and improving retrieval of underutilized memory nodes.
+      - Evaluated memory reliability on the LoCoMo benchmark, conducting retrieval ablations, multi-hop failure analysis, and deterministic evidence-based evaluation.
+
+  - role: Founder & Engineer
+    org: Self-employed
+    url: ""
+    start: Aug 2022
+    end: Aug 2023
+    location: Seattle, WA
+    bullets:
+      - Founded a one-person software venture to build an image-organizing web product; took it from idea to a working prototype before winding it down.
+      - "Built the full stack solo: Flask API and React front end with MongoDB, containerized with Docker Compose; Spring Boot microservices deployed to AWS with CI/CD and Kubernetes."
+      - Owned product scoping, architecture and cloud cost decisions end to end.
+
+  - role: Engineering Intern
+    org: Tesla
+    url: https://www.tesla.com/
+    start: Jan 2022
+    end: Apr 2022
+    location: Fremont, CA
+    bullets:
+      - Built a full-stack tool (REST API + web UI) for git-based daily program backup, cutting operation time by 20% and preserving data in virtual repositories.
+      - Designed machine-vision applications to find thermal trends on Model 3/Y/S modules; parsed sequence files and applied new image-processing algorithms, raising inspection accuracy by 11%.
+      - Optimized data acquisition (DAQ) systems connecting sensor signals to in-house servers to improve light-distribution analysis.
+
+  - role: Software Apprentice, Data (Capstone)
+    org: Intel
+    url: https://www.intel.com/
+    start: Jan 2021
+    end: Mar 2021
+    location: Seattle, WA
+    bullets:
+      - Analyzed and visualized user data on client CPU cycles with pandas, NumPy, Matplotlib and Seaborn, shortening the development cycle by 5–10%.
+      - Implemented regression analysis on AWS, improving computation throughput by 16%.
+
+  - role: Teaching Assistant
+    org: University of Minnesota
+    url: https://twin-cities.umn.edu/
+    start: Sep 2019
+    end: Jan 2020
+    location: Minneapolis, MN
+    bullets:
+      - "Course: Circuit Theory. Office hours, assignment and exam grading."
+
+  - role: Senior Hardware Engineer
+    org: XRSPACE (VR/AR startup)
+    url: https://www.xrspace.io/
+    start: Oct 2017
+    end: Aug 2018
+    location: Taoyuan / Taipei, Taiwan
+    bullets:
+      - Surveyed and designed camera-based tracking systems for VR/AR headsets.
+
+  - role: Associate Engineer
+    org: Industrial Technology Research Institute (ITRI)
+    url: https://www.itri.org.tw/
+    start: Apr 2017
+    end: Sep 2017
+    location: Hsinchu, Taiwan
+    bullets:
+      - Designed and evaluated transparent display systems for augmented-reality applications, focusing on optical performance and system-level integration.
+      - Ran experiments on display characteristics (brightness, contrast, optical alignment) to assess real-world usability.
+      - Authored a technical report on wearable transparent display technologies, covering design trade-offs and performance evaluation.
+
+  - role: Senior Hardware Engineer, Multimedia Dept.
+    org: HTC / HTC Vive
+    url: https://www.vive.com/
+    start: Sep 2014
+    end: Feb 2017
+    location: Taipei, Taiwan
+    bullets:
+      - "Products: [Base Station](https://www.vive.com/us/accessory/base-station/), [SteamVR Base Station 2.0](https://www.vive.com/us/accessory/base-station2/), [HTC VIVE series](https://www.vive.com/us/product/vive-pro2/overview/), [smartphone camera modules](https://www.htc.com/tw/smartphones/), [Re camera](https://www.htc.com/us/re/re-camera/)."
+      - Developed an OpenCV-based image-processing tool for laser line-beam analysis on the Vive VR tracking system, assessing optical element quality and detecting jitter-related defects; designed the database schema and UI for logging performance metrics.
+      - Analyzed tracking and beam-profile data in Python (linear regression, intensity and jitter analysis) to evaluate beam straightness, continuity and temporal stability.
+
+  - role: Optical Engineer
+    org: GSEO (Genius Electronic Optical)
+    url: ""
+    start: Apr 2014
+    end: Aug 2014
+    location: Xiamen, China
+    bullets:
+      - Developed lens curve-fitting software tools that improved the manufacturing process and yield rate for Apple Inc. lens products.

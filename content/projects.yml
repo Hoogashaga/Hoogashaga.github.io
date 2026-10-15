@@ -1,0 +1,144 @@
+# ---------------------------------------------------------------------------
+# 專案。最常改的就是這個檔：複製一段貼在最上面、改內容、跑 python build.py。
+#
+# 欄位（只有 title 必填）：
+#   title     專案名稱
+#   year      右側顯示，自由文字（"2024"、"2023–24"）
+#   summary   一到三句，可用 Markdown。一行裡有「: 」的話要用 > 區塊寫法
+#   tags      關鍵字，會顯示成小標籤
+#   image     "img/<檔名>"，縮圖，先把圖放進 static/img/。留空就沒有圖
+#   video     示範影片，兩種寫法擇一：
+#               files/demo.mp4            自架檔案，放進 static/files/（建議 10MB 以內）
+#               https://youtu.be/XXXX     YouTube / Vimeo 網址，會變成嵌入播放器
+#   poster    "img/<檔名>"，自架影片播放前顯示的縮圖（選填）
+#   links     任意數量的 {label, url}：Code / Demo / Paper / Slides…
+#   featured  false 就隱藏但保留資料
+# ---------------------------------------------------------------------------
+
+- title: Autonomous Robot Car — Vision-Based Sign Recognition, Obstacle Avoidance and Optimal Path Planning
+  year: "Sep–Oct 2024"
+  summary: >
+    A self-driving robot car built from the circuit board up. Designed the control
+    board — schematic, layout and Gerber files — for the motor drivers, ultrasonic
+    range sensor, infrared line sensors and wheel encoders, then built the full
+    autonomy stack on top of it. A camera pipeline with a custom-trained
+    lightweight vision model recognises traffic lights, stop and turn signs,
+    pedestrians, cyclists and cones, and triggers the matching manoeuvre: stop,
+    yield, turn or swerve around the obstacle. Ultrasonic sweeps are turned into a
+    2D occupancy map with noise filtering and gap detection, and A\* path planning
+    finds the optimal route on that map; a background sensor thread halts the car
+    when something appears, marks it on the map and re-plans in real time. Live
+    detections are streamed to a browser dashboard.
+  tags: [Computer Vision, Path Planning, A*, Obstacle Avoidance, Embedded Systems, PCB Design, Python, OpenCV]
+  image: ""
+  # 圖片集：點縮圖會開原圖
+  images:
+    - src: img/picar-schematic.png
+      caption: Control board schematic
+    - src: img/picar-pcb.png
+      caption: PCB layout
+    - src: img/picar-gerber.png
+      caption: Gerber view
+  # 示範影片：每支 {src, poster, caption}
+  videos:
+    - src: files/picar-self-driving.mp4
+      poster: img/picar-self-driving-poster.jpg
+      caption: Full self-driving, camera POV (sign detection + navigation)
+    - src: files/picar-navigation-final.mp4
+      poster: img/picar-navigation-final-poster.jpg
+      caption: A* navigation with obstacle re-planning (final)
+    - src: files/picar-navigation-v1.mp4
+      poster: img/picar-navigation-v1-poster.jpg
+      caption: A* navigation, first version
+  links: []
+  featured: true
+
+- title: YouTube QA System — Retrieval-Augmented Generation Pipeline
+  year: "2025"
+  summary: >
+    End-to-end RAG pipeline for video understanding: transcript ingestion,
+    embedding-based semantic retrieval and LLM answer generation with the Google
+    Gemini API. Timestamp-level grounding links answers to precise video segments,
+    improving traceability and reducing hallucination; batch query processing
+    supports multi-question inference at scale.
+  tags: [Python, RAG, Gemini API, Embeddings]
+  image: ""
+  images:
+    - src: img/youtube-qa-architecture.png
+      caption: High-level architecture
+    - src: img/youtube-qa-answers.png
+      caption: Answers with clickable timestamp references
+    - src: img/youtube-qa-menu.png
+      caption: Batch processing of default questions
+  links:
+    - label: Code
+      url: https://github.com/Hoogashaga/Batch-Prediction
+  featured: true
+
+- title: Clinical Question Answering over Electronic Health Records — Uncertainty-Aware Text-to-Program with T5
+  year: "2025"
+  summary: >
+    A question-answering system that lets clinicians query structured electronic
+    health records (MIMIC-III) in plain English. A fine-tuned T5 model translates
+    each question into an executable program that runs against a knowledge graph
+    built from the records, so answers are computed rather than guessed. The model
+    is trained without any hand-written programs, using synthetic question–program
+    pairs and pseudo-labelling. An ensemble of five models decomposes prediction
+    uncertainty into data and model components to flag ambiguous or ill-posed
+    questions before they yield a wrong answer. Reproduced the published results —
+    execution accuracy 0.945 vs. 0.948 reported, high-ambiguity detection AUROC
+    0.80 vs. 0.80 — after rebuilding the full data pipeline from raw MIMIC-III CSVs
+    to a SPARQL knowledge graph, porting the legacy codebase to current PyTorch
+    Lightning and Hugging Face, adding checkpoint resumption, and running
+    hyperparameter and ensemble-size studies on A100 GPUs.
+  tags: [Clinical NLP, Text-to-Program, T5, Uncertainty Estimation, Knowledge Graph, PyTorch Lightning, Hugging Face]
+  image: ""
+  images:
+    - src: img/ehr-qa-validation-accuracy.png
+      caption: Validation execution accuracy across ensemble models
+    - src: img/ehr-qa-ambiguity-detection.png
+      caption: Ambiguity detection (AUROC / AUPRC) by uncertainty measure
+    - src: img/ehr-qa-ensemble-size.png
+      caption: Execution accuracy vs. ensemble size
+  links:
+    - label: Code
+      url: https://github.com/Hoogashaga/text2program-on-mimic-reimplementation
+  featured: true
+
+- title: Easy Buy — Image Organizer (prototype)
+  year: "2022–23"
+  summary: >
+    A self-funded product prototype for organizing and searching personal image
+    collections. Built the end-to-end stack solo — Flask API, React front end,
+    MongoDB, Docker Compose — then re-architected the backend as Spring Boot
+    microservices on AWS with CI/CD and Kubernetes to learn production
+    deployment. Reached a working prototype; development paused in 2023 before
+    public release.
+  tags: [Flask, React, MongoDB, Spring Boot, Docker, Kubernetes, AWS]
+  image: ""
+  links:
+    - label: Code
+      url: https://github.com/Hoogashaga/image-detection
+  featured: true
+
+- title: E-Worlds — MVC Shopping Website
+  year: "2021"
+  summary: >
+    Responsive shopping site with sign-in, ratings, transactions and category
+    filters, built with Express, Node.js and SQLite. Designed the schema and SQL
+    queries to speed up product search and related-item listing.
+  tags: [Node.js, Express, SQLite]
+  image: ""
+  links: []
+  featured: true
+
+# 以下是 GitHub 上有、履歷沒列的 repo，先隱藏；要顯示就改 featured: true 並補 summary。
+- title: Google AI Agents Intensive
+  year: "2025"
+  summary: Notebooks and capstone work from the Google AI Agents Intensive course.
+  tags: [Python, LLM Agents, Jupyter]
+  image: ""
+  links:
+    - label: Code
+      url: https://github.com/Hoogashaga/Google-AI-Agents-Intensive
+  featured: false

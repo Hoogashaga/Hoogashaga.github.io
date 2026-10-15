@@ -1,0 +1,39 @@
+# ---------------------------------------------------------------------------
+# 論文。會自動依 year 分組、新的年份在上；同一年內照寫的順序。
+#
+# authors 裡若出現 site.yml 的 name，會自動變粗體；也可以自己用 **名字** 標。
+# venue 可用 Markdown（例如縮寫加粗 **(SID 2014)**）。
+# links 的 url 留空就不顯示該連結。
+# ---------------------------------------------------------------------------
+
+- title: Probe-Verified Typed Repair for Multi-Graph Agent Memory
+  authors: "Sheng-Hao Chen, Vijay K. Madisetti"
+  venue: "*IEEE Open Journal of the Computer Society (OJCS)*, under review"
+  year: "2026"
+  links: []
+  note: ""
+
+- title: Transparent Display for Wearable Device Technology Portfolio Assessment Report
+  authors: "Yi Tzu Yu, Sheng-Hao Chen, Sheng Bo Wang, Heng Yin Chen"
+  venue: "Technical report, Industrial Technology Research Institute (Taiwan), 2017"
+  year: "2017"
+  links: []
+  note: ""
+
+- title: "P.165: The Most Important Factor Influencing Image Quality in 3D Short-Throw Rear-Projection System"
+  authors: "Pei-Feng Lin, Sheng-Hao Chen, Hoang Yan Lin"
+  venue: "SID Symposium Digest of Technical Papers, Vol. 45, pp. 1597–1599, San Diego, CA **(SID 2014)**"
+  year: "2014"
+  links:
+    - label: paper
+      url: https://sid.onlinelibrary.wiley.com/doi/abs/10.1002/j.2168-0159.2014.tb00426.x
+  note: ""
+
+- title: "P127: 55-Inch 3D Short-Throw Rear-Projection System with Broadband Polarizing-Type Glasses"
+  authors: "Sheng-Hao Chen, Yi-Jiun Chen, Hoang Yan Lin"
+  venue: "SID Symposium Digest of Technical Papers, Vol. 44, Issue 1, pp. 1490–1493 **(SID 2013)**"
+  year: "2013"
+  links:
+    - label: paper
+      url: https://sid.onlinelibrary.wiley.com/doi/10.1002/j.2168-0159.2013.tb06530.x
+  note: ""

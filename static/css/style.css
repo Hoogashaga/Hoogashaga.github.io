@@ -1,0 +1,358 @@
+/* ==========================================================================
+   style.css — the whole look of the site.
+
+   Colours and spacing are variables in :root. Change those first; the rules
+   below only arrange things.
+   ========================================================================== */
+
+:root {
+  --bg:      #ffffff;
+  --fg:      #222426;
+  --muted:   #6b6f75;
+  --faint:   #9a9ea4;
+  --accent:  #2f6fb5;        /* links */
+  --line:    #e6e7e9;
+  --surface: #f3f4f5;
+
+  --sidebar: 13rem;          /* profile column */
+  --measure: 46rem;          /* text column */
+
+  --font: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "PingFang TC",
+          "Microsoft JhengHei", sans-serif;
+
+  --s1: .25rem;
+  --s2: .5rem;
+  --s3: .875rem;
+  --s4: 1.5rem;
+  --s5: 2.25rem;
+  --s6: 3.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:      #141517;
+    --fg:      #e7e8ea;
+    --muted:   #9a9ea4;
+    --faint:   #6f737a;
+    --accent:  #8db4e6;
+    --line:    #2a2c30;
+    --surface: #1e2023;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Base
+   -------------------------------------------------------------------------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+img { max-width: 100%; }
+p { margin: 0; }
+h1, h2, h3 { margin: 0; line-height: 1.3; }
+
+.muted { color: var(--muted); }
+
+/* --------------------------------------------------------------------------
+   Top bar: name on the left, section links on the right
+   -------------------------------------------------------------------------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--s4);
+  padding: var(--s3) var(--s4);
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand { font-weight: 600; color: var(--fg); white-space: nowrap; }
+.brand:hover { text-decoration: none; color: var(--accent); }
+
+.topbar nav ul {
+  display: flex;
+  gap: var(--s4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.topbar nav ul::-webkit-scrollbar { display: none; }
+.topbar nav a { color: var(--muted); font-size: .95rem; white-space: nowrap; }
+.topbar nav a:hover { color: var(--fg); text-decoration: none; }
+
+/* --------------------------------------------------------------------------
+   Two columns: profile on the left, content on the right
+   -------------------------------------------------------------------------- */
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, var(--measure));
+  justify-content: center;
+  gap: var(--s6);
+  padding: var(--s6) var(--s4) var(--s5);
+}
+
+main { min-width: 0; }
+
+section { margin-bottom: var(--s6); scroll-margin-top: 4.5rem; }
+section:last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Profile column
+   -------------------------------------------------------------------------- */
+.profile { position: sticky; top: 5rem; align-self: start; }
+
+.avatar {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin-bottom: var(--s3);
+}
+
+.profile h1 { font-size: 1.25rem; font-weight: 600; }
+.headline { margin-top: var(--s1); font-size: .9rem; color: var(--muted); }
+.profile .muted { font-size: .85rem; }
+
+.contact {
+  margin: var(--s3) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: .85rem;
+}
+.contact li { margin-bottom: var(--s1); }
+.contact a { color: var(--muted); display: inline-flex; align-items: center; gap: .45rem; }
+.contact a:hover { color: var(--accent); }
+.contact .pending { color: var(--faint); display: inline-flex; align-items: center; gap: .45rem; cursor: default; }
+.contact .pending small { font-size: .75rem; }
+.icon { flex: none; }
+
+.button {
+  display: inline-block;
+  margin-top: var(--s3);
+  padding: .25rem .8rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: .85rem;
+  color: var(--fg);
+}
+.button:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+
+/* --------------------------------------------------------------------------
+   Section headings
+   -------------------------------------------------------------------------- */
+h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: var(--s3);
+  padding-bottom: var(--s2);
+  border-bottom: 1px solid var(--line);
+}
+
+h3 { font-size: 1rem; font-weight: 600; }
+h3.year { margin: var(--s4) 0 var(--s2); color: var(--muted); }
+
+.prose p { margin-bottom: var(--s3); }
+.prose p:last-child { margin-bottom: 0; }
+.prose ul { margin: 0 0 var(--s3); padding-left: 1.2rem; }
+
+/* Skills: label on the left, comma-separated list on the right */
+.skills { margin: var(--s4) 0 0; font-size: .95rem; }
+.skills > div { display: flex; gap: var(--s3); margin-bottom: var(--s1); }
+.skills dt { flex: 0 0 8rem; color: var(--muted); }
+.skills dd { margin: 0; }
+@media (max-width: 52rem) {
+  .skills > div { flex-direction: column; gap: 0; margin-bottom: var(--s2); }
+  .skills dt { flex: none; font-size: .85rem; }
+}
+
+/* --------------------------------------------------------------------------
+   Entries: education, experience, projects
+   -------------------------------------------------------------------------- */
+.entry { margin-bottom: var(--s4); }
+.entry:last-child { margin-bottom: 0; }
+
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: var(--s4);
+}
+
+.when {
+  flex: none;
+  font-size: .85rem;
+  color: var(--faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.org { color: var(--muted); font-size: .95rem; }
+.org a { color: inherit; }
+.org a:hover { color: var(--accent); }
+
+.note, .summary { margin-top: var(--s1); font-size: .95rem; }
+.note { color: var(--muted); }
+
+.entry ul { margin: var(--s2) 0 0; padding-left: 1.2rem; font-size: .95rem; }
+.entry li { margin-bottom: var(--s1); }
+.entry li::marker { color: var(--faint); }
+
+/* Projects: optional thumbnail on the left */
+.project { display: flex; gap: var(--s4); align-items: start; }
+.project > div { min-width: 0; flex: 1; }
+.thumb {
+  flex: none;
+  width: 8.5rem;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+/* Image gallery: click a thumbnail to open the full-size file */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(8.5rem, 1fr));
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+.gallery figure, .videos figure { margin: 0; }
+.gallery img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;        /* diagrams and screenshots stay whole */
+  padding: .25rem;
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+}
+.gallery figcaption, .videos figcaption {
+  margin-top: var(--s1);
+  font-size: .78rem;
+  line-height: 1.4;
+  color: var(--muted);
+}
+
+/* Demo videos (self-hosted file or YouTube/Vimeo embed), side by side when they fit */
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: var(--s3);
+  margin-top: var(--s3);
+}
+.media {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--surface);
+  line-height: 0;
+}
+.media video { width: 100%; display: block; }
+.media.is-embed { position: relative; aspect-ratio: 16 / 9; }
+.media.is-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--s2) var(--s3);
+  margin-top: var(--s2);
+  font-size: .85rem;
+}
+.tags { display: inline-flex; flex-wrap: wrap; gap: .35rem; }
+.tag {
+  padding: 0 .5rem;
+  background: var(--surface);
+  border-radius: 4px;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.links a { white-space: nowrap; }
+
+/* --------------------------------------------------------------------------
+   News, publications, awards
+   -------------------------------------------------------------------------- */
+ul.news, ul.papers, ul.plain { margin: 0; padding-left: 1.2rem; }
+ul.news li, ul.papers li, ul.plain li { margin-bottom: var(--s2); }
+ul.news li::marker, ul.papers li::marker, ul.plain li::marker { color: var(--faint); }
+
+.news .date { color: var(--muted); font-variant-numeric: tabular-nums; }
+
+.papers .venue::before { content: " "; }
+.papers .note { display: block; font-size: .9rem; margin-top: 0; }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+footer {
+  max-width: calc(var(--sidebar) + var(--measure) + var(--s6));
+  margin: 0 auto;
+  padding: var(--s4) var(--s4) var(--s5);
+  border-top: 1px solid var(--line);
+  font-size: .8rem;
+  color: var(--faint);
+}
+footer a { color: inherit; }
+
+/* --------------------------------------------------------------------------
+   Narrow screens: profile moves above the content
+   -------------------------------------------------------------------------- */
+@media (max-width: 52rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--s5);
+    padding: var(--s4) var(--s3) var(--s5);
+  }
+  .profile {
+    position: static;
+    display: flex;
+    gap: var(--s4);
+    align-items: center;
+  }
+  .profile-text { flex: 1; min-width: 0; }
+  .avatar { width: 6rem; height: 6rem; margin: 0; }
+  .contact { margin-top: var(--s2); display: flex; flex-wrap: wrap; gap: var(--s1) var(--s3); }
+  .contact li { margin: 0; }
+  .topbar { padding: var(--s2) var(--s3); }
+  .entry-head { flex-direction: column; gap: 0; }
+  .project { flex-direction: column; gap: var(--s2); }
+  .thumb { width: 100%; max-width: 20rem; }
+  footer { padding-left: var(--s3); padding-right: var(--s3); }
+}
+
+/* --------------------------------------------------------------------------
+   Print: Ctrl+P should give a sensible CV
+   -------------------------------------------------------------------------- */
+@media print {
+  :root { --bg: #fff; --fg: #000; --muted: #333; --faint: #555; --accent: #000; --line: #bbb; }
+  .topbar, .button, .thumb { display: none; }
+  .layout { display: block; padding: 0; }
+  .profile { position: static; margin-bottom: var(--s4); }
+  .avatar { display: none; }
+  section, .entry { break-inside: avoid; }
+}
