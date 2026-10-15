@@ -6,13 +6,14 @@
    ========================================================================== */
 
 :root {
-  --bg:      #ffffff;
+  --bg:      #fafafa;        /* page: a touch off pure white */
   --fg:      #222426;
   --muted:   #6b6f75;
   --faint:   #9a9ea4;
   --accent:  #2f6fb5;        /* links */
-  --line:    #e6e7e9;
-  --surface: #f3f4f5;
+  --line:    #e4e6e9;
+  --surface: #f1f2f4;
+  --topbar:  #eef2f7;        /* top bar: faint blue-grey tint of the accent */
 
   --sidebar: 13rem;          /* profile column */
   --measure: 46rem;          /* text column */
@@ -38,6 +39,7 @@
     --accent:  #8db4e6;
     --line:    #2a2c30;
     --surface: #1e2023;
+    --topbar:  #191c21;
   }
 }
 
@@ -81,7 +83,7 @@ h1, h2, h3 { margin: 0; line-height: 1.3; }
   align-items: center;
   gap: var(--s4);
   padding: var(--s3) var(--s4);
-  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  background: color-mix(in srgb, var(--topbar) 94%, transparent);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
@@ -89,6 +91,8 @@ h1, h2, h3 { margin: 0; line-height: 1.3; }
 .brand { font-weight: 600; color: var(--fg); white-space: nowrap; }
 .brand:hover { text-decoration: none; color: var(--accent); }
 
+/* min-width: 0 lets the nav shrink so the list scrolls instead of widening the page */
+.topbar nav { min-width: 0; }
 .topbar nav ul {
   display: flex;
   gap: var(--s4);
