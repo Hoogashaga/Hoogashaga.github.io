@@ -84,6 +84,10 @@ news:
 # Certificates：新的放最上面。url 留空就只顯示文字。
 # ---------------------------------------------------------------------------
 certificates:
+  - title: Applications of AI for Anomaly Detection
+    issuer: NVIDIA
+    date: "Oct 2026"
+    url: https://learn.nvidia.com/certificates?id=LMxfuANGQyOT6sXCAvpDJA
   - title: Generative AI with Diffusion Models
     issuer: NVIDIA
     date: "Oct 2026"
