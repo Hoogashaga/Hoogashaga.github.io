@@ -8,7 +8,7 @@ education:
   - degree: Master of Computer Science
     org: University of Illinois Urbana-Champaign
     url: https://illinois.edu/
-    start: Sep 2024
+    start: May 2024
     end: May 2026
     note: "GPA 4.0/4.0"
 
@@ -123,6 +123,6 @@ work:
     url: ""
     start: Apr 2014
     end: Aug 2014
-    location: Xiamen, China
+    location: Taichung, Taiwan (on assignment in Xiamen)
     bullets:
       - Developed lens curve-fitting software tools that improved the manufacturing process and yield rate for Apple Inc. lens products.
