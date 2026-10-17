@@ -38,27 +38,27 @@ links:
 # About me：Markdown，幾段短文即可。
 # ---------------------------------------------------------------------------
 about: |
-  **I'm Orion.** I've spent my career chasing the same itch across very
-  different hardware: how does this system actually work, and how do I prove
-  it? That itch took me from laser optics for the HTC Vive and AR displays, to
-  machine-vision tooling at Tesla and Intel, to a self-driving robot car I
-  built from the circuit board up, and now to LLM agents that check and repair
-  their own memory.
+  **I'm Orion**, an engineer who is happiest when a new technology shows up
+  and I get to find out how it really works. That curiosity has carried me
+  from physics and photonics through VR/AR optics, computer vision and
+  robotics to machine learning and large language models, and each time the
+  pattern is the same: learn the principles, build something real, and test
+  whether it holds up.
 
-  What I enjoy most is the research loop: form a hypothesis, build the
-  experiment that could prove it wrong, and read the failures carefully. My
-  current work does exactly that for LLM agent memory — probe-based
-  verification, typed repair, and evaluation on LoCoMo with ablations and
-  multi-hop failure analysis (under review at *IEEE OJCS*). Before that I
-  reproduced a text-to-program clinical QA paper end to end, fine-tuning and
-  ensembling T5 and rebuilding its data pipeline until the published numbers
-  came back.
+  Along the way I've built optical analysis systems for the HTC Vive tracking
+  system, machine-vision tooling at Tesla, a self-driving robot car from the
+  circuit board up, and retrieval and fine-tuned-model pipelines on top of
+  modern LLMs. My current research at Georgia Tech looks at memory in LLM
+  agents: I designed a self-repair framework and the evaluation methods to
+  probe where retrieval breaks down and what repair can and cannot fix
+  (manuscript under review at *IEEE OJCS*).
 
-  Physics and photonics taught me to treat ML as an empirical science; a decade
-  of shipping hardware taught me that a result only counts when it runs
-  reliably outside the lab. I pick up new fields quickly because I genuinely
-  like the learning, and I'm happiest on a team where research and engineering
-  sit side by side, building AI that is safer and more trustworthy.
+  What I enjoy most is the space where research meets engineering: trying a
+  new approach, building the system around it, and understanding exactly why
+  it succeeds or fails. Hardware taught me that a result only counts when it
+  runs outside the lab; research taught me to design the experiment that
+  could prove me wrong. I'm not attached to a single domain — ML systems are
+  my focus now because that is where the most interesting open questions are.
 
 # 技術技能。整段刪掉或寫 skills: [] 就不顯示。
 skills:
