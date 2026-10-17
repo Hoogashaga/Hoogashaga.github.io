@@ -38,26 +38,27 @@ links:
 # About me：Markdown，幾段短文即可。
 # ---------------------------------------------------------------------------
 about: |
-  I'm Orion, an engineer who can't resist taking things apart to see how they
-  work, from laser optics to language models. Over the years that curiosity has
-  taken me through VR tracking optics for the HTC Vive, AR display systems,
-  machine-vision tooling at Tesla and Intel, a self-driving robot car built from
-  the circuit board up, and most recently LLM agents that check and repair their
-  own memory. The thread running through all of it: understand the system,
-  then make it work reliably.
+  **I'm Orion.** I've spent my career chasing the same itch across very
+  different hardware: how does this system actually work, and how do I prove
+  it? That itch took me from laser optics for the HTC Vive and AR displays, to
+  machine-vision tooling at Tesla and Intel, to a self-driving robot car I
+  built from the circuit board up, and now to LLM agents that check and repair
+  their own memory.
 
-  Today my focus is making LLM agents trustworthy: detecting when a model is
-  uncertain, repairing failures in its memory, and measuring the result with
-  evidence-based evaluation. My latest work is a self-repair framework for
-  multi-graph agent memory, evaluated on the LoCoMo benchmark (under review at
-  *IEEE OJCS*). Before that I fine-tuned and ensembled T5 models for
-  text-to-program question answering over clinical records, reproducing the
-  published results end to end.
+  What I enjoy most is the research loop: form a hypothesis, build the
+  experiment that could prove it wrong, and read the failures carefully. My
+  current work does exactly that for LLM agent memory — probe-based
+  verification, typed repair, and evaluation on LoCoMo with ablations and
+  multi-hop failure analysis (under review at *IEEE OJCS*). Before that I
+  reproduced a text-to-program clinical QA paper end to end, fine-tuning and
+  ensembling T5 and rebuilding its data pipeline until the published numbers
+  came back.
 
-  My background in physics and photonics taught me to treat ML as an empirical
-  science: careful experiments, engineering rigor, reliable operation. I pick
-  up new domains quickly, and I'm happiest on teams where research and
-  engineering sit side by side, building AI that is safer and more trustworthy.
+  Physics and photonics taught me to treat ML as an empirical science; a decade
+  of shipping hardware taught me that a result only counts when it runs
+  reliably outside the lab. I pick up new fields quickly because I genuinely
+  like the learning, and I'm happiest on a team where research and engineering
+  sit side by side, building AI that is safer and more trustworthy.
 
 # 技術技能。整段刪掉或寫 skills: [] 就不顯示。
 skills:
