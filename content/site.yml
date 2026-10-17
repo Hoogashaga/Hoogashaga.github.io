@@ -47,8 +47,8 @@ about: |
 
   Along the way I've built optical analysis systems for the HTC Vive tracking
   system, machine-vision tooling at Tesla, a self-driving robot car from the
-  circuit board up, and retrieval and fine-tuned-model pipelines on top of
-  modern LLMs. My current research at Georgia Tech looks at memory in LLM
+  circuit board up, and retrieval systems and fine-tuned language models. My
+  current research at Georgia Tech looks at memory in LLM
   agents: I designed a self-repair framework and the evaluation methods to
   probe where retrieval breaks down and what repair can and cannot fix
   (manuscript under review at *IEEE OJCS*).
@@ -57,8 +57,9 @@ about: |
   new approach, building the system around it, and understanding exactly why
   it succeeds or fails. Hardware taught me that a result only counts when it
   runs outside the lab; research taught me to design the experiment that
-  could prove me wrong. I'm not attached to a single domain — ML systems are
-  my focus now because that is where the most interesting open questions are.
+  could prove me wrong. I remain curious about emerging technologies across
+  disciplines, and I'm particularly drawn to ML systems for the research
+  challenges and the opportunities to build something new.
 
 # 技術技能。整段刪掉或寫 skills: [] 就不顯示。
 skills:
