@@ -126,3 +126,13 @@ work:
     location: Taichung, Taiwan
     bullets:
       - Developed lens curve-fitting software tools that improved the manufacturing process and yield rate for Apple Inc. lens products.
+
+  - role: Soldier (Compulsory Military Service)
+    org: Republic of China Navy
+    url: ""
+    start: Aug 2009
+    end: Aug 2010
+    location: Taiwan
+    bullets:
+      - Won first prize in the Navy's annual drill competition, setting a new record.
+      - Responsible for flag signal operations and risk detection; honorably discharged.
