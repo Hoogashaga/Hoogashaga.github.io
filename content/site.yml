@@ -18,7 +18,7 @@ photo: ""
 # 左欄的 Resume 就會變成下載連結。cv 留空時，cv_placeholder: true 會先顯示
 # 灰色的「Resume (coming soon)」佔位；兩個都空就完全不顯示。
 cv: ""
-cv_placeholder: true
+cv_placeholder: false
 
 # 左側聯絡連結。label 裡有 Email / GitHub / LinkedIn / Scholar / Twitter / ORCID
 # 會自動配上對應圖示，其他文字則用通用的連結圖示。
