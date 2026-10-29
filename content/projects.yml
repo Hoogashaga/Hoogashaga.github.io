@@ -19,8 +19,7 @@
   year: "Sep–Nov 2024"
   summary: |
     A self-driving robot car built from the circuit board up, then turned into a
-    connected device with a cloud back end. Team of four for UIUC CS 437
-    (Internet of Things).
+    connected device with a cloud back end.
 
     - **Control board.** Designed the schematic, PCB layout and Gerber files for
       the motor drivers, ultrasonic range sensor, infrared line sensors and wheel
@@ -32,22 +31,20 @@
       noise filtering and gap detection; A\* finds the optimal route, and a
       background sensor thread halts the car, marks new obstacles and re-plans in
       real time. Live detections stream to a browser dashboard.
-    - **Remote control.** A multi-threaded Raspberry Pi server exposes a TCP
-      command channel, an MJPEG camera stream over Flask and a JSON status feed
-      (ultrasonic distance, line-sensor values, speed). An Electron desktop console
-      drives the car over Wi-Fi with the live feed and telemetry on screen; a
-      Bluetooth RFCOMM client/server does the same over a 1 Mbps link.
-    - **Network hardening and analysis.** UFW firewall on the Pi, a Wi-Fi signal
-      survey from the moving car, a two-LAN routed topology in Cisco Packet
-      Tracer, and Wireshark/tshark captures of the car's own traffic with TLS
-      decryption through a key log to read the HTTP/2 frames underneath.
-    - **Cloud fleet.** Emulated vehicles publish emission data to AWS IoT Core
-      over MQTT with per-device X.509 certificates through a Greengrass core. A
-      Lambda keeps each vehicle's running CO₂ maximum in DynamoDB and replies on a
-      per-vehicle topic so no car sees another's data. Kinesis Firehose archives
-      every message to S3, where a Glue crawler and Athena expose it to SQL for
-      analysis in a SageMaker notebook, and IoT Device Defender flags a simulated
-      message flood.
+    - **Remote control.** The car can be driven from a laptop. A multi-threaded
+      server on the Pi takes commands over TCP, streams the camera as MJPEG and
+      reports distance, line sensors and speed as JSON, with an Electron console
+      on the other end. A Bluetooth RFCOMM version keeps control working without
+      Wi-Fi, over a 1 Mbps link.
+    - **Network security.** Locked the Pi down with a firewall, mapped Wi-Fi
+      dead zones by driving the car around the house, and inspected the car's
+      own traffic in Wireshark, including decrypting its TLS sessions to see the
+      HTTP/2 requests underneath.
+    - **Cloud fleet.** Scaled from one car to a fleet of emulated vehicles
+      reporting emissions to AWS IoT Core over MQTT, each with its own
+      certificate. A Lambda tracks every vehicle's peak CO₂ and answers each car
+      on its own topic, the full stream is archived to S3 and queried with SQL
+      through Athena, and Device Defender catches a simulated message flood.
   tags: [Computer Vision, Path Planning, A*, Obstacle Avoidance, Embedded Systems, PCB Design, Python, OpenCV, Raspberry Pi, TCP/IP, MQTT, AWS IoT, Wireshark, Electron]
   image: ""
   # 圖片集：點縮圖會開原圖
