@@ -17,38 +17,37 @@
 
 - title: Autonomous Robot Car — Vision-Based Sign Recognition, Obstacle Avoidance, Optimal Path Planning and IoT Connectivity
   year: "Sep–Nov 2024"
-  summary: >
-    A self-driving robot car built from the circuit board up. Designed the control
-    board — schematic, layout and Gerber files — for the motor drivers, ultrasonic
-    range sensor, infrared line sensors and wheel encoders, then built the full
-    autonomy stack on top of it. A camera pipeline with a custom-trained
-    lightweight vision model recognises traffic lights, stop and turn signs,
-    pedestrians, cyclists and cones, and triggers the matching manoeuvre: stop,
-    yield, turn or swerve around the obstacle. Ultrasonic sweeps are turned into a
-    2D occupancy map with noise filtering and gap detection, and A\* path planning
-    finds the optimal route on that map; a background sensor thread halts the car
-    when something appears, marks it on the map and re-plans in real time. Live
-    detections are streamed to a browser dashboard.
-
-
-    The car was then made a connected device. A multi-threaded server on the
-    Raspberry Pi exposes a TCP command channel for driving and speed control, a
-    Flask endpoint that streams the camera as MJPEG, and a JSON status feed
-    (ultrasonic distance, line-sensor values, speed); an Electron desktop console
-    drives the car over Wi-Fi with the live feed and telemetry on screen, and a
-    Bluetooth RFCOMM client/server does the same over a 1 Mbps link. The
-    network side was then hardened and inspected: a UFW firewall on the Pi, a
-    Wi-Fi signal survey from the moving car, a two-LAN routed topology in Cisco
-    Packet Tracer, and Wireshark/tshark captures of the car's own traffic with
-    TLS decryption through a key log to read the HTTP/2 frames underneath.
-    Finally the fleet went to the cloud: emulated vehicles publish emission data
-    to AWS IoT Core over MQTT with per-device X.509 certificates through a
-    Greengrass core, a Lambda keeps each vehicle's running CO₂ maximum in
-    DynamoDB and replies on a per-vehicle topic so no car sees another's data,
-    Kinesis Firehose archives every message to S3 where a Glue crawler and
-    Athena expose it to SQL for analysis in a SageMaker notebook, and IoT Device
-    Defender flags a simulated message flood. Team of four for UIUC CS 437
+  summary: |
+    A self-driving robot car built from the circuit board up, then turned into a
+    connected device with a cloud back end. Team of four for UIUC CS 437
     (Internet of Things).
+
+    - **Control board.** Designed the schematic, PCB layout and Gerber files for
+      the motor drivers, ultrasonic range sensor, infrared line sensors and wheel
+      encoders.
+    - **Vision.** A camera pipeline with a custom-trained lightweight model
+      recognises traffic lights, stop and turn signs, pedestrians, cyclists and
+      cones, and triggers the matching manoeuvre: stop, yield, turn or swerve.
+    - **Mapping and planning.** Ultrasonic sweeps become a 2D occupancy map with
+      noise filtering and gap detection; A\* finds the optimal route, and a
+      background sensor thread halts the car, marks new obstacles and re-plans in
+      real time. Live detections stream to a browser dashboard.
+    - **Remote control.** A multi-threaded Raspberry Pi server exposes a TCP
+      command channel, an MJPEG camera stream over Flask and a JSON status feed
+      (ultrasonic distance, line-sensor values, speed). An Electron desktop console
+      drives the car over Wi-Fi with the live feed and telemetry on screen; a
+      Bluetooth RFCOMM client/server does the same over a 1 Mbps link.
+    - **Network hardening and analysis.** UFW firewall on the Pi, a Wi-Fi signal
+      survey from the moving car, a two-LAN routed topology in Cisco Packet
+      Tracer, and Wireshark/tshark captures of the car's own traffic with TLS
+      decryption through a key log to read the HTTP/2 frames underneath.
+    - **Cloud fleet.** Emulated vehicles publish emission data to AWS IoT Core
+      over MQTT with per-device X.509 certificates through a Greengrass core. A
+      Lambda keeps each vehicle's running CO₂ maximum in DynamoDB and replies on a
+      per-vehicle topic so no car sees another's data. Kinesis Firehose archives
+      every message to S3, where a Glue crawler and Athena expose it to SQL for
+      analysis in a SageMaker notebook, and IoT Device Defender flags a simulated
+      message flood.
   tags: [Computer Vision, Path Planning, A*, Obstacle Avoidance, Embedded Systems, PCB Design, Python, OpenCV, Raspberry Pi, TCP/IP, MQTT, AWS IoT, Wireshark, Electron]
   image: ""
   # 圖片集：點縮圖會開原圖
